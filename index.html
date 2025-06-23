@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Function Programs</title>
+</head>
+<body>
+  <h1>JavaScript Function Examples</h1>
+
+  <script>
+    // 1. Function that filters out negative numbers
+    function filterNegativeNumbers(arr) {
+      return arr.filter(num => num >= 0);
+    }
+    console.log("1. Filter Negative Numbers:");
+    console.log(filterNegativeNumbers([-5, 10, -2, 3, 0, -9])); // [10, 3, 0]
+
+    // 2. Difference with 13 or double absolute difference if greater than 13
+    function differenceWith13(n) {
+      return n > 13 ? 2 * Math.abs(n - 13) : 13 - n;
+    }
+    console.log("\n2. Difference with 13:");
+    console.log(differenceWith13(10));  // 3
+    console.log(differenceWith13(20));  // 14
+
+    // 3. Fibonacci series
+    function fibonacciSeries(n) {
+      let fib = [0, 1];
+      for (let i = 2; i < n; i++) {
+        fib.push(fib[i - 1] + fib[i - 2]);
+      }
+      return fib.slice(0, n);
+    }
+    console.log("\n3. Fibonacci Series:");
+    console.log(fibonacciSeries(10));  // First 10 terms
+
+    // 4. Sum of multiples of 3 and 5 under 1000
+    function sumMultiplesOf3And5(limit) {
+      let sum = 0;
+      for (let i = 0; i < limit; i++) {
+        if (i % 3 === 0 || i % 5 === 0) {
+          sum += i;
+        }
+      }
+      return sum;
+    }
+    console.log("\n4. Sum of Multiples of 3 and 5 below 1000:");
+    console.log(sumMultiplesOf3And5(1000));  // 233168
+
+    // 5. Cube of a number using Function object
+    const cube = new Function("n", "return n * n * n;");
+    console.log("\n5. Cube of a Number (Function object):");
+    console.log(cube(3));  // 27
+  </script>
+</body>
+</html>
